@@ -12,16 +12,13 @@ public class Service {
     }
 
     // Add getter for imageResourceId
-    public int getImageResourceId() {
-        return imageResourceId;
-    }
-
+    public int getImageResourceId() { return imageResourceId; }
     // Existing getters remain the same
     public String getTitle() {
         return title;
     }
-
     public int getAvailableProviders() {
         return availableProviders;
     }
+    public void setImageBitmap(int imageResourceId) { this.imageResourceId = imageResourceId; }
 }
