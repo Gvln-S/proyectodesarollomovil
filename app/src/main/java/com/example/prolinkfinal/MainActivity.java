@@ -20,14 +20,18 @@ public class MainActivity extends AppCompatActivity implements ServiceAdapter.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String serviceType = getIntent().getStringExtra("SERVICE_TYPE");
+        int imageResourceId = getIntent().getIntExtra("SERVICE_IMAGE_ID", -1); // Get image resource ID (default -1)
+
+
         servicesRecyclerView = findViewById(R.id.servicesRecyclerView);
         services = new ArrayList<>();
 
         // Agregar servicios de ejemplo
-        services.add(new Service("Plomería", 12, R.drawable.plomeria));
-        services.add(new Service("Jardinería", 8, R.drawable.jardineria));
-        services.add(new Service("Tutoría", 15, R.drawable.tutoria));
-        services.add(new Service("Reparación de Electrodomésticos", 10, R.drawable.reparacion));
+        services.add(new Service("plomeria", 12, R.drawable.plomeria));
+        services.add(new Service("jardineria", 8, R.drawable.jardineria));
+        services.add(new Service("tutoria", 15, R.drawable.tutoria));
+        services.add(new Service("reparacion", 10, R.drawable.reparacion));
 
 
         serviceAdapter = new ServiceAdapter(services, this);

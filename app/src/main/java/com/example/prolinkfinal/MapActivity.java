@@ -2,8 +2,12 @@ package com.example.prolinkfinal;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,11 +18,13 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MapActivity extends AppCompatActivity {
     private MapView mapView;
+    ImageView serviceImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,22 @@ public class MapActivity extends AppCompatActivity {
 
         String serviceType = getIntent().getStringExtra("SERVICE_TYPE");
         setTitle("Proveedores de " + serviceType);
+
+        serviceImage = findViewById(R.id.service_img_map);
+        switch (serviceType) {
+            case "plomeria":
+                serviceImage.setImageResource(R.drawable.plomeria);
+                break;
+            case "jardineria":
+                serviceImage.setImageResource(R.drawable.jardineria);
+                break;
+            case "reparacion":
+                serviceImage.setImageResource(R.drawable.reparacion);
+                break;
+            case "tutoria":
+                serviceImage.setImageResource(R.drawable.tutoria);
+                break;
+        }
 
         mapView = findViewById(R.id.mapView);
         mapView.setTileSource(TileSourceFactory.MAPNIK);

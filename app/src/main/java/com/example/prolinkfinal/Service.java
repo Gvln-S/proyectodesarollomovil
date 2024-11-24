@@ -11,10 +11,6 @@ public class Service {
         this.imageResourceId = imageResourceId;
     }
 
-    public Service(int imageResourceId) {
-        this.imageResourceId = imageResourceId;
-    }
-
     // Add getter for imageResourceId
     public int getImageResourceId() { return imageResourceId; }
     // Existing getters remain the same
@@ -24,4 +20,5 @@ public class Service {
     public int getAvailableProviders() {
         return availableProviders;
     }
+    public void setImageBitmap(int imageResourceId) { this.imageResourceId = imageResourceId; }
 }
