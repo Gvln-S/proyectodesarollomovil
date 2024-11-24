@@ -5,11 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MapActivity extends AppCompatActivity {
     private MapView mapView;
@@ -42,8 +48,6 @@ public class MapActivity extends AppCompatActivity {
     }
 
     private void addSampleProviders() {
-        // Estos son proveedores de ejemplo. En una aplicación real,
-        // estos datos vendrían de una base de datos o API
         addProviderMarker(new GeoPoint(19.4326, -99.1332), "Juan Pérez", "4.5★");
         addProviderMarker(new GeoPoint(19.4226, -99.1432), "María García", "4.8★");
         addProviderMarker(new GeoPoint(19.4426, -99.1232), "Carlos López", "4.2★");
