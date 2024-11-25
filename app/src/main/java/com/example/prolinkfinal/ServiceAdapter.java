@@ -48,9 +48,9 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
 
         public ServiceViewHolder(@NonNull View itemView) {
             super(itemView);
-            titleTextView = itemView.findViewById(R.id.serviceTitleTextView);
-            providersTextView = itemView.findViewById(R.id.availableProvidersTextView);
-            serviceImageView = itemView.findViewById(R.id.serviceImageView); // Inicializar el ImageView
+            titleTextView = itemView.findViewById(R.id.service_name);
+            providersTextView = itemView.findViewById(R.id.service_around);
+            serviceImageView = itemView.findViewById(R.id.service_img); // Inicializar el ImageView
 
             itemView.setOnClickListener(v -> {
                 int position = getAdapterPosition();
